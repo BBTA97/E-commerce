@@ -1,5 +1,7 @@
 package ObserverPattern;
 import java.util.ArrayList;
+import java.util.List;
+
 import DataModels.*;
 
 /*
@@ -7,7 +9,7 @@ import DataModels.*;
  */
 
 public class OrderProcessor {
-    private final ArrayList<OrderObserver> observers = new ArrayList<>();
+    private final List<OrderObserver> observers = new ArrayList<>();
 
     public void register(OrderObserver observer){
         observers.add(observer);
@@ -21,7 +23,7 @@ public class OrderProcessor {
         }
     }
     public void processOrder(Order order){
-        System.out.println("\n Processing order "+ order.orderId() +"...");
+        System.out.println("\nProcessing order "+ order.orderId() +"...");
         //ตรรกะการประมวลผลคำสั่งอื่นๆ
         System.out.println("Order processed successfully.");
 
